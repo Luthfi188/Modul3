@@ -14,7 +14,7 @@ from sklearn.cluster import KMeans
 # ===================== LOAD DATA =====================
 @st.cache_data
 def load_data():
-    df = pd.read_csv('C:/Users/Acer/Documents/berkas kuliah/smt 4/Penambangan Data/covid_19_indonesia_time_series_all.csv')
+    df = pd.read_csvpd.read_csv('covid_19_indonesia_time_series_all.csv')
     df['Case Fatality Rate'] = df['Case Fatality Rate'].str.replace('%', '', regex=False)
     df['Case Fatality Rate'] = pd.to_numeric(df['Case Fatality Rate'], errors='coerce')
     df = df.dropna(subset=['Total Cases', 'Total Deaths', 'Total Recovered', 'Population Density', 'Case Fatality Rate'])
